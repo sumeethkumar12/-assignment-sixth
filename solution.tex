@@ -1,0 +1,55 @@
+
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\title{assignment 6 } 
+
+\author{sumeethkumar \\
+ai21btech11008}
+
+\logo{\large \LaTeX{}}
+\begin{document}
+\begin{frame}
+    \titlepage 
+\end{frame}
+\logo{}
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\section{question: ex 6.7}
+\begin{frame}{question}
+\begin{itemize}
+    
+    \item  Suppose $z=x+y$., find pdf of $f_z(z),$ and x and y are independent 
+ exponential random variables with parameter a .
+    
+\end{itemize}
+\end{frame}
+\section{solution}
+\begin{frame}{solution} 
+ since x and y are exponential random variable of parameter a, we get
+ \begin{align}
+    f_x(x)=a e^{-ax}U(x)\\[8pt]
+    f_y(y)= a e^{-ay}U(y)
+ \end{align}
+ we can make use of below theorm to obtain this,\\
+ 
+ \begin{align}
+     &{f_z(z)=\int_{x=0}^z f_{xy}(x,y)dydx}\\[8pt]
+     &{=\begin{cases}
+      \int_0^z f_x(x) f_y(z-x)dx & z  < 0\\
+      0 & z\le 0
+      \end{cases}}
+      \end{align}
+\end{frame}
+ \begin{frame}{solution}
+ so from above theorm  and using the condition x ,y are independent we get,
+ \begin{align}
+    & {f_z(z)=\int_0^z f_x(x) f_y(z-x) dx} \\[8pt]
+     &{f_z(z)=\int_0^z a^2 e^{-ax} e^{-a(z-x)dx}}\\[8pt]
+     &{ f_z(z)=a^2 e^{-az}\int_0^z dx}\\[8pt]
+     &{=za^2 e^{-az}U(z)}
+     \end{align}
+  \end{frame}
+\end{document}
